@@ -9,12 +9,23 @@ public class TestSping {
    // Music music = context.getBean("musicBean", Music.class);
 
     //MusicPlayer musicPlayer = new MusicPlayer(music);
+//
+//        MusicPlayer firstMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+//
+//        MusicPlayer secondMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+//
+//        System.out.println(firstMusicPlayer==secondMusicPlayer);
+//        System.out.println(firstMusicPlayer);
+//        System.out.println(secondMusicPlayer);
+//
+//        firstMusicPlayer.playMusic();
+//        System.out.println(firstMusicPlayer.getName());
+//        System.out.println(firstMusicPlayer.getVolume());
 
-        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-    musicPlayer.playMusic();
-        System.out.println(musicPlayer.getName());
-        System.out.println(musicPlayer.getVolume());
+        ClassicalMusic classicalMusic = context.getBean("musicClassicalBean", ClassicalMusic.class);
+        System.out.println(classicalMusic.getSong());
 
+    context.close();
     }
 
 

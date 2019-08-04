@@ -13,7 +13,10 @@
 
 
     <bean id="musicClassicalBean"
-          class="com.raining.spring.music.ClassicalMusic">
+          class="com.raining.spring.music.ClassicalMusic"
+          init-method="doMyInit"
+    destroy-method="doMyDestroy"
+    factory-method="getClassicalMusic">
 
     </bean>
     <bean id="musicRockBean"
@@ -25,7 +28,8 @@
 
     </bean>
     <bean id="musicPlayer"
-          class="com.raining.spring.music.MusicPlayer">
+          class="com.raining.spring.music.MusicPlayer"
+    scope = "prototype">
         <property name="musicList">
         <util:list list-class="java.util.ArrayList" id="musicList"
                    value-type="com.raining.spring.music.Music">
