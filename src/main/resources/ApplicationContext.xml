@@ -8,41 +8,44 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
 
+
+<context:component-scan base-package="com.raining.spring.music"/>
     <context:property-placeholder location="classpath*:musicPlayer.properties"/>
 
 
+<!--    <context:property-placeholder location="classpath*:musicPlayer.properties"/>-->
 
-    <bean id="musicClassicalBean"
-          class="com.raining.spring.music.ClassicalMusic"
-          init-method="doMyInit"
-    destroy-method="doMyDestroy"
-    factory-method="getClassicalMusic">
+<!--    <bean id="musicClassicalBean"-->
+<!--          class="com.raining.spring.music.ClassicalMusic"-->
+<!--          init-method="doMyInit"-->
+<!--    destroy-method="doMyDestroy"-->
+<!--    factory-method="getClassicalMusic">-->
 
-    </bean>
-    <bean id="musicRockBean"
-          class="com.raining.spring.music.RockMusic">
+<!--    </bean>-->
+<!--    <bean id="musicRockBean"-->
+<!--          class="com.raining.spring.music.RockMusic">-->
 
-    </bean>
-    <bean id="musicPopBean"
-          class="com.raining.spring.music.PopMusic">
+<!--    </bean>-->
+<!--    <bean id="musicPopBean"-->
+<!--          class="com.raining.spring.music.PopMusic">-->
 
-    </bean>
-    <bean id="musicPlayer"
-          class="com.raining.spring.music.MusicPlayer"
-    scope = "prototype">
-        <property name="musicList">
-        <util:list list-class="java.util.ArrayList" id="musicList"
-                   value-type="com.raining.spring.music.Music">
-                <ref bean="musicClassicalBean"/>
-                <ref bean="musicRockBean"/>
-                <ref bean="musicPopBean"/>
-        </util:list>
-        </property>
-<!--        <property name="music" ref = "musicBean"/>-->
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-<!--        <property name="name" value="SonyPlayer"/>-->
-<!--        <property name="volume" value="20"/>-->
-    </bean>
+<!--    </bean>-->
+<!--    <bean id="musicPlayer"-->
+<!--          class="com.raining.spring.music.MusicPlayer"-->
+<!--    scope = "prototype">-->
+<!--        <property name="musicList">-->
+<!--        <util:list list-class="java.util.ArrayList" id="musicList"-->
+<!--                   value-type="com.raining.spring.music.Music">-->
+<!--                <ref bean="musicClassicalBean"/>-->
+<!--                <ref bean="musicRockBean"/>-->
+<!--                <ref bean="musicPopBean"/>-->
+<!--        </util:list>-->
+<!--        </property>-->
+<!--&lt;!&ndash;        <property name="music" ref = "musicBean"/>&ndash;&gt;-->
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--&lt;!&ndash;        <property name="name" value="SonyPlayer"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="volume" value="20"/>&ndash;&gt;-->
+<!--    </bean>-->
 
 </beans>
